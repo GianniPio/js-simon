@@ -31,7 +31,7 @@ for (let i = 0; i < 5; i++) {
 table.innerHTML = numberRandom;
 
 // attiva la funziona dopo 30 secondi
-setTimeout(simonSays, 1000);
+setTimeout(simonSays, 30000);
 
 
 

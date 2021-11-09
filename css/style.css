@@ -1,5 +1,33 @@
+
+/* tag generali */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    background-color: aqua;
+}
+
+/* tag header */
+
+header {
+    text-align: center;
+    font-size: 30px;
+}
+
+/* tag main */
+
+main {
+
+    position: fixed;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+main > div {
+
+    font-size: 30px;
 }
