@@ -14,14 +14,74 @@
 // 4. In base a quanti numeri ha indovinato, esce un messaggio
 
 const numberRandom = [];
-const table = document.getElementById("ciao");
+const table = document.getElementById("table");
+const result = document.getElementById("risultato");
+let userNumber = [];
+
 
 
 // generazione random dei numeri
 for (let i = 0; i < 5; i++) {
-     let number = Math.floor(Math.random() *10) + 1;
+     let number = Math.floor(Math.random() *100) + 1;
     
      numberRandom.push(number);
 }
 
+// far appairre i numeri su schero
 table.innerHTML = numberRandom;
+
+// attiva la funziona dopo 30 secondi
+setTimeout(simonSays, 30000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// funzione che pulisce lo schermo
+    function simonSays() {
+        table.innerHTML = "";
+
+        for (let x = 0; x < 5; x++) {
+    
+            let number = prompt("Inserisci un numero");
+        
+            if (number == numberRandom[x]) {
+                
+                userNumber.push(number);
+        
+            }
+            
+        }
+
+        if (userNumber.length == 5) {
+            risultato.innerHTML = "Bravo/a, hai indovinato tutti i numeri!!!"
+        } else {
+            risultato.innerHTML = `Hai indovinato ${userNumber.length} numeri e sono ${userNumber}`;
+        }
+        
+    }
+
+
