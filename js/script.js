@@ -12,3 +12,16 @@
 // 3. Tramite il promt, far inserire all'utente 5 numeri
 
 // 4. In base a quanti numeri ha indovinato, esce un messaggio
+
+const numberRandom = [];
+const table = document.getElementById("ciao");
+
+
+// generazione random dei numeri
+for (let i = 0; i < 5; i++) {
+     let number = Math.floor(Math.random() *10) + 1;
+    
+     numberRandom.push(number);
+}
+
+table.innerHTML = numberRandom;
