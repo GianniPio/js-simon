@@ -17,12 +17,14 @@ const numberRandom = [];
 const table = document.getElementById("table");
 const result = document.getElementById("risultato");
 let userNumber = [];
+let duplicate;
 
-
+// Stampa random dei numeri da 1 fino a 100
 while (numberRandom.length < 5) {
     let number = Math.floor(Math.random() *100) + 1;
 
-    let duplicate = numberRandom.includes(number);
+    // controllo dei numeri duplicati
+    duplicate = numberRandom.includes(number);
 
     if (!duplicate) {
         
@@ -34,7 +36,7 @@ while (numberRandom.length < 5) {
 table.innerHTML = numberRandom;
 
 // attiva la funziona dopo 30 secondi
-setTimeout(simonSays, 30000);
+setTimeout(simonSays, 5000);
 
 
 
@@ -42,28 +44,7 @@ setTimeout(simonSays, 30000);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// funzione che pulisce lo schermo
+// funzione per SimonSays
     function simonSays() {
         table.innerHTML = "";
 
@@ -79,11 +60,15 @@ setTimeout(simonSays, 30000);
             
         }
 
+        // risposte delle vincite
         if (userNumber.length == 5) {
             risultato.innerHTML = "Bravo/a, hai indovinato tutti i numeri!!!"
         } else if (userNumber.length == 0) {
             risultato.innerHTML = "Non hai indovinato nessun numero!!!"
+        } else if (userNumber.length == 1){
+            risultato.innerHTML = `Hai indovinato soltanto ${userNumber.length} numero ed è ${userNumber}`;
         } else {
+
             risultato.innerHTML = `Hai indovinato ${userNumber.length} numeri e sono ${userNumber}`;
         }
         
