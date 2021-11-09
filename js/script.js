@@ -19,12 +19,15 @@ const result = document.getElementById("risultato");
 let userNumber = [];
 
 
+while (numberRandom.length < 5) {
+    let number = Math.floor(Math.random() *100) + 1;
 
-// generazione random dei numeri
-for (let i = 0; i < 5; i++) {
-     let number = Math.floor(Math.random() *100) + 1;
-    
-     numberRandom.push(number);
+    let duplicate = numberRandom.includes(number);
+
+    if (!duplicate) {
+        
+        numberRandom.push(number); 
+    }
 }
 
 // far appairre i numeri su schero
