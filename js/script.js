@@ -31,7 +31,7 @@ for (let i = 0; i < 5; i++) {
 table.innerHTML = numberRandom;
 
 // attiva la funziona dopo 30 secondi
-setTimeout(simonSays, 30000);
+setTimeout(simonSays, 1000);
 
 
 
@@ -78,6 +78,8 @@ setTimeout(simonSays, 30000);
 
         if (userNumber.length == 5) {
             risultato.innerHTML = "Bravo/a, hai indovinato tutti i numeri!!!"
+        } else if (userNumber.length == 0) {
+            risultato.innerHTML = "Non hai indovinato nessun numero!!!"
         } else {
             risultato.innerHTML = `Hai indovinato ${userNumber.length} numeri e sono ${userNumber}`;
         }
